@@ -33,7 +33,7 @@
 
 ### What We're Building
 
-A **Twilio-like SMS service platform built for the Indian market** — a cloud communication platform that allows businesses to send transactional, promotional, and OTP SMS messages via simple REST APIs or a web dashboard.
+A cloud communication platform that allows businesses to send transactional, promotional, and OTP SMS messages via simple REST APIs or a web dashboard.
 
 ### Goals
 
