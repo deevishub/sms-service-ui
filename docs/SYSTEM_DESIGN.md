@@ -49,19 +49,23 @@ A cloud communication platform that allows businesses to send transactional, pro
 
 ### Competitive Positioning
 
+**Note:** Phase 1 (Months 1–6) operates as a **reseller** via upstream HTTP providers (MSG91/Gupshup). Phase 3+ becomes an **aggregator** with direct SMPP to operators.
+
 ```
-┌─────────────────────┬──────────────┬───────────┬──────────────┬──────────────┐
-│ Feature             │ Our Platform │ Twilio    │ MSG91        │ Gupshup      │
-├─────────────────────┼──────────────┼───────────┼──────────────┼──────────────┤
-│ India DLT Native    │ ✅ Built-in  │ ❌ Addon  │ ✅ Built-in  │ ✅ Built-in  │
-│ SMPP Direct Connect │ ✅           │ ❌        │ ❌           │ ✅           │
-│ Sub-second Latency  │ ✅ <200ms    │ ~500ms    │ ~400ms       │ ~300ms       │
-│ Transparent Pricing │ ✅           │ ❌ Markup │ ⚠️ Tiered    │ ⚠️ Tiered    │
-│ Self-hosted Option  │ ✅ Planned   │ ❌        │ ❌           │ ❌           │
-│ WhatsApp + SMS      │ ✅ Unified   │ ✅        │ ✅           │ ✅           │
-│ Real-time Analytics │ ✅           │ ✅        │ ⚠️ Delayed   │ ⚠️ Basic     │
-│ Data Residency 🇮🇳  │ ✅ India     │ ❌ US     │ ✅ India     │ ✅ India     │
-└─────────────────────┴──────────────┴───────────┴──────────────┴──────────────┘
+┌──────────────────────┬─────────────────────┬───────────┬──────────────┬──────────────┐
+│ Feature              │ Phase 1 (Reseller)  │ Twilio    │ MSG91        │ Gupshup      │
+├──────────────────────┼─────────────────────┼───────────┼──────────────┼──────────────┤
+│ India DLT Native     │ ✅ Built-in         │ ❌ Addon  │ ✅ Built-in  │ ✅ Built-in  │
+│ SMPP Direct Connect  │ ⏳ Phase 3+         │ ❌        │ ❌           │ ✅           │
+│ HTTP API to Provider │ ✅ Phase 1          │ ❌        │ ✅ Upstream  │ ✅ Upstream  │
+│ Sub-second Latency   │ ✅ <200ms*          │ ~500ms    │ ~400ms       │ ~300ms       │
+│ Transparent Pricing  │ ✅ Cost-plus model  │ ❌ Markup │ ⚠️ Tiered    │ ⚠️ Tiered    │
+│ Self-hosted Option   │ ✅ Phase 3+         │ ❌        │ ❌           │ ❌           │
+│ WhatsApp + SMS       │ ⏳ Phase 4          │ ✅        │ ✅           │ ✅           │
+│ Real-time Analytics  │ ✅                  │ ✅        │ ⚠️ Delayed   │ ⚠️ Basic     │
+│ Data Residency 🇮🇳   │ ✅ India (via MSG91)│ ❌ US     │ ✅ India     │ ✅ India     │
+└──────────────────────┴─────────────────────┴───────────┴──────────────┴──────────────┘
+*Depends on upstream provider latency. Control plane latency for routing/auth still <200ms.
 ```
 
 ### Core Use Cases
