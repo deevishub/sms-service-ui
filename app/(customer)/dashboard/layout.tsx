@@ -37,7 +37,7 @@ const sidebarItems = [
     icon: "🪝",
   },
   {
-    href: "/dashboard/settings/profile",
+    href: "/dashboard/settings",
     label: "Settings",
     icon: "⚙️",
   },
@@ -45,6 +45,8 @@ const sidebarItems = [
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const isItemActive = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <div className="flex h-screen bg-zinc-50 dark:bg-black">
@@ -64,7 +66,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         <nav className="flex-1 overflow-y-auto p-4">
           <ul className="space-y-2">
             {sidebarItems.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = isItemActive(item.href);
               return (
                 <li key={item.href}>
                   <Link
@@ -87,6 +89,12 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 
         {/* Footer */}
         <div className="p-4 border-t border-zinc-200 dark:border-zinc-800">
+          <Link
+            href="/overview"
+            className="mb-2 w-full inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg"
+          >
+            Switch to Admin
+          </Link>
           <button className="w-full px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg">
             Logout
           </button>
@@ -104,6 +112,9 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             <span className="text-sm text-zinc-600 dark:text-zinc-400">
               Balance: ₹5,200.00
             </span>
+            <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+              Home
+            </Link>
             <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium">
               Add Balance
             </button>

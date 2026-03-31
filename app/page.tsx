@@ -158,6 +158,40 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-2xl font-bold text-white text-center mb-6">
+            Select Your Workspace
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Link
+              href="/overview"
+              className="rounded-xl border border-red-400/40 bg-red-950/40 p-6 hover:bg-red-900/50 transition-colors"
+            >
+              <p className="text-sm uppercase tracking-wide text-red-300 mb-2">
+                Internal Operations
+              </p>
+              <h3 className="text-xl font-semibold text-white">Admin Console</h3>
+              <p className="text-slate-300 mt-2 text-sm">
+                Manage accounts, compliance approvals, routing, pricing, and system health.
+              </p>
+            </Link>
+            <Link
+              href="/dashboard"
+              className="rounded-xl border border-blue-400/40 bg-blue-950/40 p-6 hover:bg-blue-900/50 transition-colors"
+            >
+              <p className="text-sm uppercase tracking-wide text-blue-300 mb-2">
+                Customer Experience
+              </p>
+              <h3 className="text-xl font-semibold text-white">Customer Dashboard</h3>
+              <p className="text-slate-300 mt-2 text-sm">
+                Send SMS, monitor delivery, manage billing, and use developer tools.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-slate-700 bg-slate-900 py-8 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">

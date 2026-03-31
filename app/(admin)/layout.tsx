@@ -6,17 +6,19 @@ import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
 
 const sidebarItems = [
-  { href: "/admin/overview", label: "Overview", icon: "📊" },
-  { href: "/admin/accounts", label: "Accounts", icon: "👥" },
-  { href: "/admin/providers", label: "Providers", icon: "🌐" },
-  { href: "/admin/pricing", label: "Pricing", icon: "💰" },
-  { href: "/admin/dlt", label: "DLT Review", icon: "✅" },
-  { href: "/admin/financial", label: "Financial", icon: "📈" },
-  { href: "/admin/system", label: "System Health", icon: "⚙️" },
+  { href: "/overview", label: "Overview", icon: "📊" },
+  { href: "/accounts", label: "Accounts", icon: "👥" },
+  { href: "/providers", label: "Providers", icon: "🌐" },
+  { href: "/pricing", label: "Pricing", icon: "💰" },
+  { href: "/dlt", label: "DLT Review", icon: "✅" },
+  { href: "/financial", label: "Financial", icon: "📈" },
+  { href: "/system", label: "System Health", icon: "⚙️" },
 ];
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const isItemActive = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <div className="flex h-screen bg-zinc-50 dark:bg-black">
@@ -34,7 +36,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         <nav className="flex-1 overflow-y-auto p-4">
           <ul className="space-y-2">
             {sidebarItems.map((item) => {
-              const isActive = pathname === item.href;
+              const isActive = isItemActive(item.href);
               return (
                 <li key={item.href}>
                   <Link
@@ -56,6 +58,12 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         </nav>
 
         <div className="p-4 border-t border-zinc-200 dark:border-zinc-800">
+          <Link
+            href="/dashboard"
+            className="mb-2 w-full inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg"
+          >
+            Switch to Customer
+          </Link>
           <button className="w-full px-4 py-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg">
             Logout
           </button>
@@ -68,8 +76,16 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
           <h1 className="text-xl font-semibold text-black dark:text-white">
             Admin Panel
           </h1>
-          <div className="text-sm text-zinc-600 dark:text-zinc-400">
-            Last sync: {new Date().toLocaleTimeString()}
+          <div className="flex items-center gap-4">
+            <div className="text-sm text-zinc-600 dark:text-zinc-400">
+              Last sync: {new Date().toLocaleTimeString()}
+            </div>
+            <Link
+              href="/"
+              className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              Back to Home
+            </Link>
           </div>
         </div>
 
