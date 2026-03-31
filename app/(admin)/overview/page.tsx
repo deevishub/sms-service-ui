@@ -11,15 +11,21 @@ import {
 } from "@/lib/admin-data";
 
 export default function AdminOverview() {
-  const activeAccounts = adminAccounts.filter((acc) => acc.status === "active").length;
+  const activeAccounts = adminAccounts.filter(
+    (acc) => acc.status === "active",
+  ).length;
   const totalMessages = adminAccounts.reduce(
     (total, account) => total + account.messagesThisMonth,
-    0
+    0,
   );
   const avgDeliveryRate =
-    providerMetrics.reduce((total, provider) => total + (100 - provider.errorRatePct), 0) /
-    providerMetrics.length;
-  const criticalQueues = queueMetrics.filter((queue) => queue.status === "critical").length;
+    providerMetrics.reduce(
+      (total, provider) => total + (100 - provider.errorRatePct),
+      0,
+    ) / providerMetrics.length;
+  const criticalQueues = queueMetrics.filter(
+    (queue) => queue.status === "critical",
+  ).length;
 
   return (
     <div className="space-y-8">
@@ -32,24 +38,36 @@ export default function AdminOverview() {
           <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 mb-2">
             Active Accounts
           </p>
-          <p className="text-3xl font-bold text-black dark:text-white">{activeAccounts}</p>
-          <p className="text-xs text-green-600 mt-2">Includes live API customers</p>
+          <p className="text-3xl font-bold text-black dark:text-white">
+            {activeAccounts}
+          </p>
+          <p className="text-xs text-green-600 mt-2">
+            Includes live API customers
+          </p>
         </div>
 
         <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-6">
           <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 mb-2">
             Messages This Month
           </p>
-          <p className="text-3xl font-bold text-black dark:text-white">{formatCompactNumber(totalMessages)}</p>
-          <p className="text-xs text-green-600 mt-2">Across all account plans</p>
+          <p className="text-3xl font-bold text-black dark:text-white">
+            {formatCompactNumber(totalMessages)}
+          </p>
+          <p className="text-xs text-green-600 mt-2">
+            Across all account plans
+          </p>
         </div>
 
         <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-6">
           <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400 mb-2">
             Weighted Delivery Rate
           </p>
-          <p className="text-3xl font-bold text-black dark:text-white">{avgDeliveryRate.toFixed(1)}%</p>
-          <p className="text-xs text-green-600 mt-2">Computed from provider error rates</p>
+          <p className="text-3xl font-bold text-black dark:text-white">
+            {avgDeliveryRate.toFixed(1)}%
+          </p>
+          <p className="text-xs text-green-600 mt-2">
+            Computed from provider error rates
+          </p>
         </div>
 
         <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-6">
@@ -59,7 +77,9 @@ export default function AdminOverview() {
           <p className="text-3xl font-bold text-black dark:text-white">
             {formatCurrencyInr(monthlyFinancialSummary.grossRevenueInr)}
           </p>
-          <p className="text-xs text-green-600 mt-2">Margin {monthlyFinancialSummary.grossMarginPct.toFixed(2)}%</p>
+          <p className="text-xs text-green-600 mt-2">
+            Margin {monthlyFinancialSummary.grossMarginPct.toFixed(2)}%
+          </p>
         </div>
       </div>
 
@@ -74,7 +94,8 @@ export default function AdminOverview() {
                 Queue pressure detected
               </p>
               <p className="text-yellow-700 dark:text-yellow-300 mt-1">
-                {criticalQueues} critical queue requires rate throttling or worker scale-out.
+                {criticalQueues} critical queue requires rate throttling or
+                worker scale-out.
               </p>
             </div>
             <div className="p-3 rounded-lg bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-900">
@@ -82,7 +103,11 @@ export default function AdminOverview() {
                 DLT review backlog
               </p>
               <p className="text-red-700 dark:text-red-300 mt-1">
-                {dltSubmissions.filter((item) => item.riskFlags.length > 0).length} submissions need compliance escalation.
+                {
+                  dltSubmissions.filter((item) => item.riskFlags.length > 0)
+                    .length
+                }{" "}
+                submissions need compliance escalation.
               </p>
             </div>
           </div>

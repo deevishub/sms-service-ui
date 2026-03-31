@@ -128,9 +128,16 @@ export default function AdminProviders() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {queueMetrics.map((queue) => (
-            <div key={queue.name} className="rounded-lg border border-zinc-200 dark:border-zinc-700 p-4">
-              <p className="text-sm font-medium text-black dark:text-white">{queue.name}</p>
-              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">Lag: {queue.lag} | Throughput: {queue.throughputPerSecond}/s</p>
+            <div
+              key={queue.name}
+              className="rounded-lg border border-zinc-200 dark:border-zinc-700 p-4"
+            >
+              <p className="text-sm font-medium text-black dark:text-white">
+                {queue.name}
+              </p>
+              <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                Lag: {queue.lag} | Throughput: {queue.throughputPerSecond}/s
+              </p>
             </div>
           ))}
         </div>

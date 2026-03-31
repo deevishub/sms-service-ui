@@ -45,7 +45,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
                       "flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
                       isActive
                         ? "bg-red-100 dark:bg-red-900 text-red-900 dark:text-red-100"
-                        : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                        : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800",
                     )}
                   >
                     <span className="text-lg">{item.icon}</span>

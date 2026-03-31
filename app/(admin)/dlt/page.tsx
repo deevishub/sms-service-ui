@@ -9,11 +9,14 @@ export default function AdminDLT() {
   const [decisions, setDecisions] = useState<Record<string, DltDecision>>({});
 
   const pendingCount = useMemo(
-    () => dltSubmissions.filter((submission) => !decisions[submission.id]).length,
-    [decisions]
+    () =>
+      dltSubmissions.filter((submission) => !decisions[submission.id]).length,
+    [decisions],
   );
 
-  const highRiskCount = dltSubmissions.filter((submission) => submission.riskFlags.length > 0).length;
+  const highRiskCount = dltSubmissions.filter(
+    (submission) => submission.riskFlags.length > 0,
+  ).length;
 
   const setDecision = (id: string, decision: DltDecision) => {
     setDecisions((previous) => ({ ...previous, [id]: decision }));
@@ -27,16 +30,24 @@ export default function AdminDLT() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-4">
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">Pending Reviews</p>
-          <p className="text-2xl font-bold text-black dark:text-white">{pendingCount}</p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            Pending Reviews
+          </p>
+          <p className="text-2xl font-bold text-black dark:text-white">
+            {pendingCount}
+          </p>
         </div>
         <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-4">
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">High Risk Flags</p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            High Risk Flags
+          </p>
           <p className="text-2xl font-bold text-red-600">{highRiskCount}</p>
         </div>
         <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-4">
           <p className="text-xs text-zinc-500 dark:text-zinc-400">SLA Target</p>
-          <p className="text-2xl font-bold text-black dark:text-white">30 min</p>
+          <p className="text-2xl font-bold text-black dark:text-white">
+            30 min
+          </p>
         </div>
       </div>
 
@@ -78,7 +89,9 @@ export default function AdminDLT() {
                     </td>
                     <td className="px-6 py-3">
                       {submission.riskFlags.length === 0 ? (
-                        <span className="text-green-600 text-xs font-medium">No flags</span>
+                        <span className="text-green-600 text-xs font-medium">
+                          No flags
+                        </span>
                       ) : (
                         <div className="flex flex-wrap gap-1">
                           {submission.riskFlags.map((flag) => (
@@ -99,7 +112,9 @@ export default function AdminDLT() {
                       {decision ? (
                         <span
                           className={`text-xs font-semibold ${
-                            decision === "approved" ? "text-green-600" : "text-red-600"
+                            decision === "approved"
+                              ? "text-green-600"
+                              : "text-red-600"
                           }`}
                         >
                           {decision.toUpperCase()}
@@ -107,13 +122,17 @@ export default function AdminDLT() {
                       ) : (
                         <div className="flex gap-2">
                           <button
-                            onClick={() => setDecision(submission.id, "approved")}
+                            onClick={() =>
+                              setDecision(submission.id, "approved")
+                            }
                             className="px-2 py-1 rounded text-xs bg-green-600 text-white hover:bg-green-700"
                           >
                             Approve
                           </button>
                           <button
-                            onClick={() => setDecision(submission.id, "rejected")}
+                            onClick={() =>
+                              setDecision(submission.id, "rejected")
+                            }
                             className="px-2 py-1 rounded text-xs bg-red-600 text-white hover:bg-red-700"
                           >
                             Reject

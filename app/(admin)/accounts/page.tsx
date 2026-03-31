@@ -1,24 +1,35 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { adminAccounts, formatCompactNumber, formatCurrencyInr } from "@/lib/admin-data";
+import {
+  adminAccounts,
+  formatCompactNumber,
+  formatCurrencyInr,
+} from "@/lib/admin-data";
 
 export default function AdminAccounts() {
   const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "suspended" | "review">("all");
+  const [statusFilter, setStatusFilter] = useState<
+    "all" | "active" | "suspended" | "review"
+  >("all");
 
   const filteredAccounts = useMemo(() => {
     return adminAccounts.filter((account) => {
       const matchesSearch =
         account.company.toLowerCase().includes(search.toLowerCase()) ||
         account.email.toLowerCase().includes(search.toLowerCase());
-      const matchesStatus = statusFilter === "all" || account.status === statusFilter;
+      const matchesStatus =
+        statusFilter === "all" || account.status === statusFilter;
       return matchesSearch && matchesStatus;
     });
   }, [search, statusFilter]);
 
-  const lowBalanceAccounts = adminAccounts.filter((account) => account.walletBalance < 15000).length;
-  const reviewAccounts = adminAccounts.filter((account) => account.status === "review").length;
+  const lowBalanceAccounts = adminAccounts.filter(
+    (account) => account.walletBalance < 15000,
+  ).length;
+  const reviewAccounts = adminAccounts.filter(
+    (account) => account.status === "review",
+  ).length;
 
   return (
     <div className="space-y-6">
@@ -37,7 +48,9 @@ export default function AdminAccounts() {
           <select
             value={statusFilter}
             onChange={(event) =>
-              setStatusFilter(event.target.value as "all" | "active" | "suspended" | "review")
+              setStatusFilter(
+                event.target.value as "all" | "active" | "suspended" | "review",
+              )
             }
             className="px-3 py-2 border border-zinc-300 dark:border-zinc-600 rounded-lg bg-white dark:bg-zinc-800 text-black dark:text-white text-sm"
           >
@@ -51,16 +64,26 @@ export default function AdminAccounts() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-4">
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">Visible Accounts</p>
-          <p className="text-2xl font-bold text-black dark:text-white">{filteredAccounts.length}</p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            Visible Accounts
+          </p>
+          <p className="text-2xl font-bold text-black dark:text-white">
+            {filteredAccounts.length}
+          </p>
         </div>
         <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-4">
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">KYC / Compliance Review</p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            KYC / Compliance Review
+          </p>
           <p className="text-2xl font-bold text-yellow-600">{reviewAccounts}</p>
         </div>
         <div className="bg-white dark:bg-zinc-900 rounded-lg border border-zinc-200 dark:border-zinc-800 p-4">
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">Low Wallet Alerts</p>
-          <p className="text-2xl font-bold text-red-600">{lowBalanceAccounts}</p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            Low Wallet Alerts
+          </p>
+          <p className="text-2xl font-bold text-red-600">
+            {lowBalanceAccounts}
+          </p>
         </div>
       </div>
 
@@ -103,7 +126,7 @@ export default function AdminAccounts() {
                           ? "bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100"
                           : acc.status === "review"
                             ? "bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-100"
-                          : "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100"
+                            : "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-100"
                       }`}
                     >
                       {acc.status.charAt(0).toUpperCase() + acc.status.slice(1)}

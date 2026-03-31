@@ -171,9 +171,12 @@ export default function Home() {
               <p className="text-sm uppercase tracking-wide text-red-300 mb-2">
                 Internal Operations
               </p>
-              <h3 className="text-xl font-semibold text-white">Admin Console</h3>
+              <h3 className="text-xl font-semibold text-white">
+                Admin Console
+              </h3>
               <p className="text-slate-300 mt-2 text-sm">
-                Manage accounts, compliance approvals, routing, pricing, and system health.
+                Manage accounts, compliance approvals, routing, pricing, and
+                system health.
               </p>
             </Link>
             <Link
@@ -183,9 +186,12 @@ export default function Home() {
               <p className="text-sm uppercase tracking-wide text-blue-300 mb-2">
                 Customer Experience
               </p>
-              <h3 className="text-xl font-semibold text-white">Customer Dashboard</h3>
+              <h3 className="text-xl font-semibold text-white">
+                Customer Dashboard
+              </h3>
               <p className="text-slate-300 mt-2 text-sm">
-                Send SMS, monitor delivery, manage billing, and use developer tools.
+                Send SMS, monitor delivery, manage billing, and use developer
+                tools.
               </p>
             </Link>
           </div>

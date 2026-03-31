@@ -1,5 +1,8 @@
 export type AccountStatus = "active" | "suspended" | "review";
-export type DltMessageType = "transactional" | "promotional" | "service-explicit";
+export type DltMessageType =
+  | "transactional"
+  | "promotional"
+  | "service-explicit";
 export type QueueHealth = "healthy" | "warning" | "critical";
 
 export interface AdminAccount {

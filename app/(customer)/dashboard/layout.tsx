@@ -75,7 +75,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                       "flex items-center gap-3 px-4 py-2 rounded-lg text-sm font-medium transition-colors",
                       isActive
                         ? "bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100"
-                        : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                        : "text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800",
                     )}
                   >
                     <span className="text-lg">{item.icon}</span>
@@ -112,7 +112,10 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             <span className="text-sm text-zinc-600 dark:text-zinc-400">
               Balance: ₹5,200.00
             </span>
-            <Link href="/" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
+            <Link
+              href="/"
+              className="text-sm text-blue-600 dark:text-blue-400 hover:underline"
+            >
               Home
             </Link>
             <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium">
