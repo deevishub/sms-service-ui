@@ -69,8 +69,8 @@ export default function Home() {
               Run SMS outreach from one focused customer workspace
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-300">
-              DeevisHub brings campaign sending, delivery tracking, billing,
-              and developer tools together in a clean dashboard designed for
+              DeevisHub brings campaign sending, delivery tracking, billing, and
+              developer tools together in a clean dashboard designed for
               fast-moving telemarketing teams.
             </p>
 
@@ -207,10 +207,16 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 DeevisHub. Telemarketing SMS workspace.</p>
           <div className="flex items-center gap-4">
-            <Link href="/dashboard" className="hover:text-amber-600 dark:hover:text-amber-300">
+            <Link
+              href="/dashboard"
+              className="hover:text-amber-600 dark:hover:text-amber-300"
+            >
               Customer Dashboard
             </Link>
-            <Link href="#features" className="hover:text-amber-600 dark:hover:text-amber-300">
+            <Link
+              href="#features"
+              className="hover:text-amber-600 dark:hover:text-amber-300"
+            >
               Features
             </Link>
           </div>
