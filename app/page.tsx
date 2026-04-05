@@ -1,290 +1,218 @@
+import Image from "next/image";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
+
+const features = [
+  {
+    title: "Campaign Dispatch",
+    description:
+      "Launch telemarketing SMS campaigns quickly with a focused send workflow and high-volume delivery support.",
+    icon: "📨",
+  },
+  {
+    title: "Live Delivery Logs",
+    description:
+      "Track message status, failures, and outcomes in one customer workspace without jumping between tools.",
+    icon: "📊",
+  },
+  {
+    title: "Billing Visibility",
+    description:
+      "Keep an eye on wallet balance, usage, and recharge activity as your team works through campaigns.",
+    icon: "💳",
+  },
+  {
+    title: "Developer Ready",
+    description:
+      "Manage API keys and webhooks whenever your telemarketing workflows need deeper integration.",
+    icon: "⚙️",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      {/* Navigation */}
-      <nav className="border-b border-slate-700 bg-slate-900/50 backdrop-blur">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">SMS</span>
-              </div>
-              <span className="text-white font-semibold">SMS Platform</span>
+    <div className="min-h-screen bg-gradient-to-b from-amber-50 via-background to-background dark:from-[#1a1307] dark:via-[#050505] dark:to-[#050505]">
+      <nav className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur dark:border-white/10 dark:bg-black/70">
+        <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="rounded-2xl bg-black px-3 py-2 shadow-lg shadow-amber-500/10">
+              <Image
+                src="/"
+                alt="DeevisHub"
+                width={132}
+                height={44}
+                priority
+                className="h-auto w-auto"
+              />
             </div>
-            <div className="flex gap-4">
-              <Link
-                href="/login"
-                className="text-slate-300 hover:text-white transition-colors"
-              >
-                Sign In
-              </Link>
-              <Link
-                href="/signup"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                Get Started
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+          </Link>
 
-      {/* Hero Section */}
-      <section className="pt-20 pb-32 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6">
-            Send SMS at Scale
-          </h1>
-          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Reliable bulk SMS service with real-time delivery tracking, DLT
-            compliance, and powerful APIs. Perfect for OTPs, notifications, and
-            campaigns.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Link
-              href="/signup"
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-            >
-              Start Free Trial
-            </Link>
-            <Link
-              href="/login"
-              className="border border-slate-500 text-white px-8 py-3 rounded-lg hover:bg-slate-800 transition-colors font-semibold"
+              href="/dashboard"
+              className="rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-black transition hover:bg-amber-400"
             >
               Sign In
             </Link>
           </div>
         </div>
-      </section>
+      </nav>
 
-      {/* Features */}
-      <section className="bg-slate-800/50 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">
-            Features
-          </h2>
-          <div className="grid sm:grid-cols-3 gap-8">
-            <div className="bg-slate-900 p-6 rounded-lg border border-slate-700">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">📨</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Bulk SMS
-              </h3>
-              <p className="text-slate-400">
-                Send thousands of messages instantly with our high-throughput
-                infrastructure.
-              </p>
+      <section className="px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2">
+          <div>
+            <span className="inline-flex rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-sm font-medium text-amber-700 dark:text-amber-300">
+              Built for telemarketers
+            </span>
+            <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
+              Run SMS outreach from one focused customer workspace
+            </h1>
+            <p className="mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-300">
+              DeevisHub brings campaign sending, delivery tracking, billing,
+              and developer tools together in a clean dashboard designed for
+              fast-moving telemarketing teams.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/dashboard"
+                className="inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 font-semibold text-black transition hover:bg-amber-400"
+              >
+                Sign In to Dashboard
+              </Link>
+              <Link
+                href="#features"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-300 px-6 py-3 font-semibold text-zinc-700 transition hover:border-amber-500 hover:text-amber-600 dark:border-zinc-700 dark:text-zinc-200 dark:hover:border-amber-400 dark:hover:text-amber-300"
+              >
+                View Features
+              </Link>
             </div>
-            <div className="bg-slate-900 p-6 rounded-lg border border-slate-700">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">✓</span>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-2xl border border-black/5 bg-white/70 p-4 dark:border-white/10 dark:bg-zinc-950/70">
+                <p className="text-2xl font-bold text-zinc-950 dark:text-white">
+                  24/7
+                </p>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  delivery visibility
+                </p>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Real-time Tracking
-              </h3>
-              <p className="text-slate-400">
-                Monitor delivery status, DLRs, and bounce rates in real time.
-              </p>
+              <div className="rounded-2xl border border-black/5 bg-white/70 p-4 dark:border-white/10 dark:bg-zinc-950/70">
+                <p className="text-2xl font-bold text-zinc-950 dark:text-white">
+                  1 Click
+                </p>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  customer sign-in flow
+                </p>
+              </div>
+              <div className="rounded-2xl border border-black/5 bg-white/70 p-4 dark:border-white/10 dark:bg-zinc-950/70">
+                <p className="text-2xl font-bold text-zinc-950 dark:text-white">
+                  Light/Dark
+                </p>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                  theme switching
+                </p>
+              </div>
             </div>
-            <div className="bg-slate-900 p-6 rounded-lg border border-slate-700">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">🔒</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                DLT Compliant
-              </h3>
-              <p className="text-slate-400">
-                Fully compliant with TRAI DLT regulations and entity
-                verification.
-              </p>
+          </div>
+
+          <div className="rounded-[28px] border border-black/5 bg-white/80 p-6 shadow-2xl shadow-amber-500/10 dark:border-white/10 dark:bg-zinc-950/80">
+            <div className="rounded-3xl bg-black p-6">
+              <Image
+                src="/DEEVISHUB_320X132.png"
+                alt="DeevisHub brand logo"
+                width={300}
+                height={100}
+                className="h-auto w-full"
+              />
             </div>
-            <div className="bg-slate-900 p-6 rounded-lg border border-slate-700">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">⚙️</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Powerful API
-              </h3>
-              <p className="text-slate-400">
-                Simple REST API with SDKs for Node.js, Python, and more.
-              </p>
-            </div>
-            <div className="bg-slate-900 p-6 rounded-lg border border-slate-700">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">💰</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Pay as You Go
-              </h3>
-              <p className="text-slate-400">
-                Transparent pricing with no hidden fees. Only pay for what you
-                send.
-              </p>
-            </div>
-            <div className="bg-slate-900 p-6 rounded-lg border border-slate-700">
-              <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-white text-xl">🛡️</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Enterprise Ready
-              </h3>
-              <p className="text-slate-400">
-                99.9% uptime SLA, 24/7 support, and API rate limits up to 10,000
-                msgs/sec.
-              </p>
+
+            <div className="mt-6 space-y-3">
+              {[
+                "Signing in now opens the customer dashboard directly.",
+                "The landing page no longer shows workspace selection.",
+                "Free-trial messaging has been removed for a telemarketer-first experience.",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 rounded-2xl bg-amber-500/10 px-4 py-3 text-sm text-zinc-700 dark:text-zinc-200"
+                >
+                  <span className="mt-0.5 text-amber-600 dark:text-amber-300">
+                    ✦
+                  </span>
+                  <span>{item}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to get started?
+      <section id="features" className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-bold text-zinc-950 dark:text-white">
+              Everything a telemarketing team needs
+            </h2>
+            <p className="mt-3 text-zinc-600 dark:text-zinc-400">
+              A customer-first workflow powered by DeevisHub branding and a
+              theme-aware interface.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {features.map((feature) => (
+              <div
+                key={feature.title}
+                className="rounded-3xl border border-black/5 bg-white/80 p-6 shadow-sm dark:border-white/10 dark:bg-zinc-950/70"
+              >
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500 text-xl text-black">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-zinc-950 dark:text-white">
+                  {feature.title}
+                </h3>
+                <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl rounded-[28px] bg-black p-8 text-center text-white shadow-2xl shadow-amber-500/15 sm:p-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-300">
+            DeevisHub Customer Access
+          </p>
+          <h2 className="mt-4 text-3xl font-bold">
+            Ready to continue your SMS operations?
           </h2>
-          <p className="text-blue-100 mb-8">
-            Sign up for free and send your first SMS in minutes.
+          <p className="mt-3 text-zinc-300">
+            Open the customer dashboard directly and manage sends, logs, and
+            balance from one place.
           </p>
           <Link
-            href="/signup"
-            className="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold"
+            href="/dashboard"
+            className="mt-6 inline-flex items-center justify-center rounded-full bg-amber-500 px-6 py-3 font-semibold text-black transition hover:bg-amber-400"
           >
-            Create Free Account
+            Open Customer Dashboard
           </Link>
         </div>
       </section>
 
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-white text-center mb-6">
-            Select Your Workspace
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <Link
-              href="/overview"
-              className="rounded-xl border border-red-400/40 bg-red-950/40 p-6 hover:bg-red-900/50 transition-colors"
-            >
-              <p className="text-sm uppercase tracking-wide text-red-300 mb-2">
-                Internal Operations
-              </p>
-              <h3 className="text-xl font-semibold text-white">
-                Admin Console
-              </h3>
-              <p className="text-slate-300 mt-2 text-sm">
-                Manage accounts, compliance approvals, routing, pricing, and
-                system health.
-              </p>
+      <footer className="border-t border-black/5 px-4 py-8 text-sm text-zinc-600 dark:border-white/10 dark:text-zinc-400 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p>© 2026 DeevisHub. Telemarketing SMS workspace.</p>
+          <div className="flex items-center gap-4">
+            <Link href="/dashboard" className="hover:text-amber-600 dark:hover:text-amber-300">
+              Customer Dashboard
             </Link>
-            <Link
-              href="/dashboard"
-              className="rounded-xl border border-blue-400/40 bg-blue-950/40 p-6 hover:bg-blue-900/50 transition-colors"
-            >
-              <p className="text-sm uppercase tracking-wide text-blue-300 mb-2">
-                Customer Experience
-              </p>
-              <h3 className="text-xl font-semibold text-white">
-                Customer Dashboard
-              </h3>
-              <p className="text-slate-300 mt-2 text-sm">
-                Send SMS, monitor delivery, manage billing, and use developer
-                tools.
-              </p>
+            <Link href="#features" className="hover:text-amber-600 dark:hover:text-amber-300">
+              Features
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-700 bg-slate-900 py-8 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="grid sm:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="font-semibold text-white mb-4">Product</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    API Docs
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-white mb-4">Company</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-white mb-4">Legal</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    Privacy
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    Terms
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    Status
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-white mb-4">Developers</h3>
-              <ul className="space-y-2 text-slate-400">
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    Documentation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    GitHub
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white">
-                    Community
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-slate-700 pt-8 text-center text-slate-400">
-            <p>&copy; 2026 SMS Platform. All rights reserved.</p>
           </div>
         </div>
       </footer>
