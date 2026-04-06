@@ -35,9 +35,9 @@ export default function Home() {
       <nav className="sticky top-0 z-50 border-b border-black/5 bg-white/80 backdrop-blur dark:border-white/10 dark:bg-black/70">
         <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
-            <div className="rounded-2xl bg-black px-3 py-2 shadow-lg shadow-amber-500/10">
+            <div className="rounded-2xl px-3 py-2 shadow-lg shadow-amber-500/10">
               <Image
-                src="/"
+                src="/DEEVISHUB_132X44.png"
                 alt="DeevisHub"
                 width={132}
                 height={44}
