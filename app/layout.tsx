@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SiteShell } from "@/components/site-shell";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,30 +13,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const themeScript = `
-(() => {
-  try {
-    const storedTheme = window.localStorage.getItem("theme");
-    const theme = storedTheme === "light" || storedTheme === "dark"
-      ? storedTheme
-      : window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-
-    document.documentElement.setAttribute("data-theme", theme);
-  } catch {
-    document.documentElement.setAttribute("data-theme", "dark");
-  }
-})();
-`;
-
 export const metadata: Metadata = {
   title: {
-    default: "DeevisHub",
-    template: "%s | DeevisHub",
+    default: "Deevishub",
+    template: "%s | Deevishub",
   },
   description:
-    "Telemarketing SMS workspace for campaigns, delivery visibility, billing, and customer operations.",
+    "Reliable bulk SMS delivery, developer-friendly APIs, and enterprise-grade campaign support from Deevishub.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
@@ -52,14 +35,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground transition-colors duration-200">
-        <Script id="theme-init" strategy="beforeInteractive">
-          {themeScript}
-        </Script>
-        {children}
+      <body className="min-h-full bg-white text-slate-900">
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
