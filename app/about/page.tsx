@@ -1,6 +1,26 @@
+import type { Metadata } from "next";
 import { BarChart3, Globe2, ShieldCheck, Smartphone, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { COMPANY_CIN, COMPANY_NAME } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: `About ${COMPANY_NAME}`,
+  description:
+    "Learn how Deevishub supports enterprises with transparent DLT SMS delivery, campaign reliability, and compliance-ready messaging operations.",
+  keywords: [
+    "about Deevishub",
+    "enterprise messaging",
+    "DLT SMS compliance",
+    "bulk SMS provider",
+    "SMS campaign support",
+  ],
+  openGraph: {
+    title: `About ${COMPANY_NAME}`,
+    description:
+      "Learn how Deevishub supports enterprises with transparent DLT SMS delivery, campaign reliability, and compliance-ready messaging operations.",
+    url: "https://sms.deevishub.com/about",
+  },
+};
 
 const reasons = [
   {

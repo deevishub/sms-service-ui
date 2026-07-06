@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -8,6 +9,25 @@ import {
   Zap,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "DLT SMS Features for Enterprises",
+  description:
+    "Discover the key DLT SMS capabilities from Deevishub, including API access, delivery reporting, OTP routing, and compliance support.",
+  keywords: [
+    "DLT SMS features",
+    "SMS API",
+    "delivery reporting",
+    "OTP messaging",
+    "compliance support",
+  ],
+  openGraph: {
+    title: "DLT SMS Features for Enterprises | Deevishub",
+    description:
+      "Discover the key DLT SMS capabilities from Deevishub, including API access, delivery reporting, OTP routing, and compliance support.",
+    url: "https://sms.deevishub.com/features",
+  },
+};
 
 const featureHighlights = [
   {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -7,6 +8,32 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Enterprise DLT SMS & Bulk Messaging",
+  description:
+    "Deevishub helps businesses send bulk, transactional, and OTP SMS with DLT compliance, fast routing, and developer-friendly APIs.",
+  keywords: [
+    "enterprise SMS",
+    "DLT messaging",
+    "bulk SMS",
+    "transactional SMS",
+    "OTP SMS",
+    "SMS API",
+    "messaging platform",
+  ],
+  openGraph: {
+    title: "Enterprise DLT SMS & Bulk Messaging | Deevishub",
+    description:
+      "Deevishub helps businesses send bulk, transactional, and OTP SMS with DLT compliance, fast routing, and developer-friendly APIs.",
+    url: "https://sms.deevishub.com/",
+  },
+  twitter: {
+    title: "Enterprise DLT SMS & Bulk Messaging | Deevishub",
+    description:
+      "Deevishub helps businesses send bulk, transactional, and OTP SMS with DLT compliance, fast routing, and developer-friendly APIs.",
+  },
+};
 
 const trustMetrics = [
   {

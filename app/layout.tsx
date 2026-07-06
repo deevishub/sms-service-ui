@@ -14,12 +14,42 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sms.deevishub.com"),
   title: {
-    default: "Deevishub",
+    default: "Deevishub | Enterprise DLT SMS & Bulk Messaging",
     template: "%s | Deevishub",
   },
   description:
-    "Reliable bulk SMS delivery, developer-friendly APIs, and enterprise-grade campaign support from Deevishub.",
+    "Deevishub provides enterprise DLT SMS, bulk messaging, and campaign delivery tools with reliable routing, compliance support, and developer-friendly APIs.",
+  viewport: "width=device-width, initial-scale=1",
+  keywords: [
+    "DLT messaging",
+    "bulk SMS",
+    "enterprise SMS",
+    "OTP SMS",
+    "transactional SMS",
+    "SMS API",
+    "SMS gateway",
+    "DLT compliance",
+    "message delivery",
+  ],
+  authors: [{ name: "Deevishub", url: "https://sms.deevishub.com" }],
+  openGraph: {
+    title: "Deevishub | Enterprise DLT SMS & Bulk Messaging",
+    description:
+      "Enterprise DLT SMS and bulk messaging services with reliable routing, delivery visibility, and compliance support.",
+    type: "website",
+    url: "https://sms.deevishub.com",
+    siteName: "Deevishub",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Deevishub | Enterprise DLT SMS & Bulk Messaging",
+    description:
+      "Enterprise DLT SMS and bulk messaging services with reliable routing, delivery visibility, and compliance support.",
+    site: "@deevishub",
+    creator: "@deevishub",
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",

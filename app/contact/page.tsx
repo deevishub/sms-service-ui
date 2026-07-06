@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Mail, MapPin, PhoneCall } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,6 +8,25 @@ import {
   CONTACT_PHONE,
   COMPANY_NAME,
 } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: `Contact ${COMPANY_NAME}`,
+  description:
+    "Get in touch with Deevishub for enterprise DLT SMS support, messaging onboarding, and campaign execution guidance.",
+  keywords: [
+    "contact Deevishub",
+    "DLT SMS support",
+    "enterprise SMS sales",
+    "SMS onboarding",
+    "messaging support",
+  ],
+  openGraph: {
+    title: `Contact ${COMPANY_NAME}`,
+    description:
+      "Get in touch with Deevishub for enterprise DLT SMS support, messaging onboarding, and campaign execution guidance.",
+    url: "https://sms.deevishub.com/contact",
+  },
+};
 
 const details = [
   {

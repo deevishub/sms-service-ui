@@ -1,6 +1,26 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PricingCard } from "@/components/pricing-card";
+
+export const metadata: Metadata = {
+  title: "SMS Pricing for Enterprises",
+  description:
+    "Compare Deevishub SMS plans for startups, scaling teams, and enterprises with transparent pricing and DLT-ready messaging capabilities.",
+  keywords: [
+    "SMS pricing",
+    "bulk SMS plans",
+    "enterprise SMS pricing",
+    "DLT messaging plans",
+    "SMS packages",
+  ],
+  openGraph: {
+    title: "SMS Pricing for Enterprises | Deevishub",
+    description:
+      "Compare Deevishub SMS plans for startups, scaling teams, and enterprises with transparent pricing and DLT-ready messaging capabilities.",
+    url: "https://sms.deevishub.com/pricing",
+  },
+};
 
 const pricingPlans = [
   {
