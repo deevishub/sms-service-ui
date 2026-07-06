@@ -21,7 +21,6 @@ export const metadata: Metadata = {
   },
   description:
     "Deevishub provides enterprise DLT SMS, bulk messaging, and campaign delivery tools with reliable routing, compliance support, and developer-friendly APIs.",
-  viewport: "width=device-width, initial-scale=1",
   keywords: [
     "DLT messaging",
     "bulk SMS",
@@ -55,6 +54,11 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
