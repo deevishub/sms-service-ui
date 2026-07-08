@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   COMPANY_ADDRESS,
   COMPANY_CIN,
+  COMPANY_GST,
   CONTACT_EMAIL,
   CONTACT_PHONE,
   COMPANY_NAME,
@@ -61,6 +62,7 @@ export function SiteFooter() {
             </li>
             <li>Phone: {CONTACT_PHONE}</li>
             <li>CIN: {COMPANY_CIN}</li>
+            <li>GST: {COMPANY_GST}</li>
             <li>{COMPANY_ADDRESS}</li>
           </ul>
         </div>

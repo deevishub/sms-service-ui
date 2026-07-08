@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BarChart3, Globe2, ShieldCheck, Smartphone, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { COMPANY_CIN, COMPANY_NAME } from "@/lib/constants";
+import { COMPANY_CIN, COMPANY_GST, COMPANY_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: `About ${COMPANY_NAME}`,
@@ -112,11 +112,17 @@ export default function AboutPage() {
                 for businesses that need fast execution without technical
                 friction.
               </p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 <div className="rounded-2xl bg-white px-4 py-4">
                   <p className="text-sm text-slate-500">CIN</p>
                   <p className="mt-1 text-lg font-semibold text-slate-900">
                     {COMPANY_CIN}
+                  </p>
+                </div>
+                <div className="rounded-2xl bg-white px-4 py-4">
+                  <p className="text-sm text-slate-500">GST</p>
+                  <p className="mt-1 text-lg font-semibold text-slate-900">
+                    {COMPANY_GST}
                   </p>
                 </div>
                 <div className="rounded-2xl bg-white px-4 py-4">
