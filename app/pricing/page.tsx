@@ -26,7 +26,7 @@ const pricingPlans = [
   {
     title: "Starter",
     price: "₹999",
-    smsVolume: "Up to 10,000 SMS / month",
+    smsVolume: "1,200 SMS / month",
     features: [
       "Promotional and transactional route access",
       "Shared sender ID support",
@@ -37,7 +37,7 @@ const pricingPlans = [
   {
     title: "Growth",
     price: "₹2,499",
-    smsVolume: "Up to 50,000 SMS / month",
+    smsVolume: "5,000 SMS / month",
     features: [
       "Dedicated onboarding and campaign guidance",
       "Priority delivery routing",
@@ -48,7 +48,7 @@ const pricingPlans = [
   {
     title: "Enterprise",
     price: "Custom",
-    smsVolume: "High-volume, transactional workflows",
+    smsVolume: "High-volume transactional workflows",
     features: [
       "Custom sender IDs and SLAs",
       "Dedicated account manager",
